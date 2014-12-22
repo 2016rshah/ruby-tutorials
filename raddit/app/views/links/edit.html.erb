@@ -1,6 +1,10 @@
-<h1>Editing link</h1>
+<% if @link.user == current_user %>
+    <h1>Editing link</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @link %> |
+    <%= render 'form' %>
+    
+    <%= link_to 'Show', @link %> |
+<% else %>
+    <h1>Oops, looks like this isn't your link to edit</h1>
+<% end %>
 <%= link_to 'Back', links_path %>
